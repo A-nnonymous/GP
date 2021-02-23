@@ -1,27 +1,28 @@
 # GP
 
-#### 介绍
-2017007106的毕业设计项目，有关传染病曲线的机器学习方法预测、传染病疫苗干预模型的设计与评估
+#### Introduction
+Graduation project,mainly about the prediction of infectious disease using machine learning methods and the designation&evaluation of infection model in considering of
+vaccine intervention using cellular automata.
 
-#### 软件架构
-软件架构说明：主要由数据处理可视化模块、机器学习（拟合）模块、与元胞自动机模拟器构成
+#### Project Framework
 
+##### 1.Data process&visualize module.
+##### 2.Machine learning (fitting) module.
+##### 3.Simulation module using cellular automata.
 
-#### 安装教程
+#### Deploy Guide
+(working on it...)
 
-1.  略
+#### Help
+(working on it ...)
 
-#### 使用说明
+#### Contribute to this 
 
-1.  略
+1.  Fork this repository
+2.  Create a new branch Feat_xxx 
+3.  Commit your code
+4.  Create Pull Request
 
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-#### 引用
-1. 数据：JHU COVID-19实时开源数据https://github.com/CSSEGISandData/COVID-19/tree/5f91e2d68a63ca91c50cb15ace408d70cf60b13b
-2. 论文：
+#### Citation
+1. Data：JHU COVID-19 dataset https://github.com/CSSEGISandData/COVID-19/tree/5f91e2d68a63ca91c50cb15ace408d70cf60b13b
+2. Paper：Up to decide...
