@@ -8,52 +8,8 @@ from pyecharts.charts import Geo
 from pyecharts.globals import ChartType
 
 
-def Rep():
-    lines = []
-    with open("place.txt", mode='r', encoding='gbk') as ef:
-        while True:
-            line = ef.readline()
-            if not line:
-                break
-            line = line.strip('\n')
-            lines.append(line)
-    return lines
-
-
 def catch():
-    url = 'https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5'
-    data = json.loads(requests.get(url=url).json()['data'])
-    distb = data['areaTree'][0]
-    growth = data['chinaDayList']
-    provinces = distb['children']
-    cityTotalConfirm = {}
-    cityTotalSuspect = {}
-    cityTotalDead = {}
-    cityTotalHeal = {}
-    cityTodayConfirm = {}
-    cityTodaySuspect = {}
-    cityTodayDead = {}
-    cityTodayHeal = {}
-
-    for province in provinces:
-        for city in province['children']:
-            cityTotalConfirm.update({city['name']: city['total']['confirm']})
-            cityTotalSuspect.update({city['name']: city['total']['suspect']})
-            cityTotalDead.update({city['name']: city['total']['dead']})
-            cityTotalHeal.update({city['name']: city['total']['heal']})
-            cityTodayConfirm.update({city['name']: city['today']['confirm']})
-            cityTodaySuspect.update({city['name']: city['today']['suspect']})
-            cityTodayDead.update({city['name']: city['today']['dead']})
-            cityTodayHeal.update({city['name']: city['today']['heal']})
-    return cityTodayConfirm, \
-           cityTodaySuspect, \
-           cityTodayDead, \
-           cityTodayHeal, \
-           cityTotalConfirm, \
-           cityTotalSuspect, \
-           cityTotalDead, \
-           cityTotalHeal
-
+    pass
 
 def geo_heatmap(k, v) -> Geo:
     try:
@@ -102,21 +58,7 @@ def geo_heatmap(k, v) -> Geo:
 
 def main(raw=0):
     tdc, tds, tdd, tdh, ttc, tts, ttd, tth = catch()
-    cities, numbers = list(ttc.keys()), list(tdc.values())
     k, v = [], []
-    ep = Rep()
-    for i in range(len(cities)):
-        if cities[i] != '地区待确认' and cities[i] not in ep:
-            k.append(cities[i])
-            v.append(numbers[i])
-        else:
-            continue
-    if raw == 0:
-        v = np.array(v)
-        v = np.log2(v+1)*10
-        v = list(v)
-    else:
-        pass
     geo_heatmap(k, v)
 
 
