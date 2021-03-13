@@ -11,7 +11,7 @@ from pyecharts.globals import ChartType
 def catch():
     pass
 
-def geo_heatmap(k, v) -> Geo:
+def geo_heatmap(k, v) -> Geo:           # Clang style return
     try:
         c = Geo()
         c.add_schema(maptype="china")
