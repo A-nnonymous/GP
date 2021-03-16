@@ -100,8 +100,8 @@ def PreProcess():
             TestingRateTimeSeries[date] = dailyData["Testing_Rate"].tolist()
             IncidentRateTimeSeries[date] = dailyData["Incident_Rate"].tolist()
 
-    TestingRateTimeSeries.to_csv("../../data/TestingRateTimeSeries.csv",index=False)
-    IncidentRateTimeSeries.to_csv("../../data/IncidentRateTimeSeries.csv",index=False)
+    TestingRateTimeSeries.to_csv("../dataPool/TestingRateTimeSeries.csv",index=False)
+    IncidentRateTimeSeries.to_csv("../dataPool/IncidentRateTimeSeries.csv",index=False)
 
 if __name__=="__main__":
     PreProcess()
